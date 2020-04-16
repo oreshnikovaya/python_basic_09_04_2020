@@ -3,14 +3,24 @@
 # Требуется определить номер дня, на который общий результат спортсмена составить не менее b километров.
 # Программа должна принимать значения параметров a и b и выводить одно натуральное число — номер дня.
 
-a = input("Введите результат за первый день в км:\n")
-b = input("Введите общий результат в км:\n")
-if a.isdigit():
-    a = int(a)
-elif b.isdigit():
-    b = int(b)
+while True:
+    user_a = input("Введите результат за первый день в км:\n")
+    if user_a.isdigit():
+        user_a = int(user_a)
+        break
+    else:
+        print("Ошибка ввода, это не число")
+
+while True:
+    user_b = input("Введите общий результат в км:\n")
+    if user_b.isdigit():
+        b = int(user_b)
+        break
+    else:
+        print("Ошибка ввода, это не число")
 day = 1
-while int(a) < int(b):
-    a = a + (a * 0.1)
+while int(user_a) < int(user_b):
+    user_a = user_a + (user_a * 0.1)
     day += 1
 print(f"Вы достигнете требуемых показателей на %d день" % day)
+
