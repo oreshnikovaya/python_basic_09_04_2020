@@ -79,7 +79,7 @@ fabric.properties
 [Ll]ib64
 [Ll]ocal
 [Ss]cripts
-venv/pyvenv.cfg
+pyvenv.cfg
 .venv
 pip-selfcheck.json
 
@@ -213,5 +213,4 @@ dmypy.json
 .idea/modules.xml
 .idea/python_basic_09_04_2020.iml
 .idea/vcs.xml
-.gitignore
-!/.gitignore
+
