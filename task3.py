@@ -6,3 +6,4 @@ a = number * 2
 b = number * 3
 result = int(number) + int(a) + int(b)
 print(result)
+
