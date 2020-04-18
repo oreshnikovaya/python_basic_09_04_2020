@@ -22,3 +22,27 @@ if month.isdigit():
         print(seasons_list[3])
     else:
         print("Такого месяца не существует")
+
+#Второй способ
+
+seasons_list_1 = ('зима',
+                  'весна',
+                  'лето',
+                  'осень'
+                  )
+seasons_dict_1 = {'зима': (12, 1, 2),
+                  'весна': (3, 4, 5),
+                  'лето': (6, 7,8),
+                  'осень': (9, 10, 11)
+                  }
+user_month_num = 5
+
+season_idx = user_month_num // 3 % 4
+
+for key, value in seasons_dict_1.items():
+    if user_month_num in value:
+        print(key)
+        break
+
+print(season_idx)
+print(seasons_list_1[season_idx])
