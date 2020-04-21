@@ -8,22 +8,22 @@
 
 def calculate_sum(*nums):
     sum = 0
-    flag = False
-    for num in nums:
-        try:
-            if num:
-                sum += float(num)
-        except ValueError:
-            flag = True
-    return sum, flag
+    exit_flag = False #по дефолту false, нужен чтобы определить ввелли пользоваетль спец символ или нет.
+    try:
+        for itm in nums:
+            sum += float(itm) if itm else 0
+    except ValueError as e:
+        flag = True
+    return sum, exit_flag
 
-general_sum = 0
-
+user_sum = 0 #хранилище результата
 while True:
-    my_string = input('Введите числа через пробел:\n ').split(' ')
-    sum, stop_flag = calculate_sum(*my_string)
-    general_sum += sum
-    print(f'сумма {general_sum}')
+    my_string = input('Введите числа через пробел:\n ').split(' ') #здесь будет список
+    result_sum, user_exit = calculate_sum(*my_string)#возвращает кортеж из двух значений, присваиваем sum и user_exit.
+    #* создаем список позиционных аргументов на основе того, что было передано функции при вызове. user_exit - флаг,
+    # булево значение, result_sum - сумма введенной последовательности my_string.
+    user_sum += result_sum
+    print(f'сумма {user_sum}')
 
-    if stop_flag:
+    if user_exit: #проверка на то, был ли введен спец символ
         break

@@ -10,12 +10,12 @@ def my_func(x, y):
 print(my_func(2, -2))
 
 #Второй способ
-#Не понимаю, как тут использовать параметр b
-def my_func_1(a, b):
-    for i in range(a-1):
-        a *= a
-    return 1 / a
-print(my_func_1(2, -2))
+def my_func_2(x: float, y: int):
+    result = 1
+    for _ in range(abs(y)): #переменная, которую мы не будем использовать. тут нужен сам факт проделланых операций,
+        # само значение не нужно
+        result *= x
+    return result if y >= 0 else 1 / result
 
 
 #Третий способ
