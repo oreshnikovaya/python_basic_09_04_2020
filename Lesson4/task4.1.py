@@ -5,12 +5,14 @@
 
 from sys import argv
 
-name, time, salary, bonus = argv
+_, time, salary, bonus = argv
 try:
-    time = int(time)
-    salary = int(salary)
-    bonus = int(bonus)
-    res = time * salary + bonus
+    # time = int(time)
+    # salary = int(salary)
+    # bonus = int(bonus)
+    # res = time * salary + bonus
+    res = float(time) * float(salary) + float(bonus)
     print(f'Заработная плата сотрудника  {res}')
-except ValueError:
+except ValueError as e:
     print('Это не число')
+    print(e)

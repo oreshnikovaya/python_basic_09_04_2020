@@ -14,3 +14,12 @@ for el in my_list:
         new.append(el)
     i+=1
 print(new)
+
+#Третий способ
+def test_iter(*args):
+    prev = float('inf')#обработка первого элемента. первый элемент из списка никак не может быть больше предыдущего,
+    # который бесконечен.
+    for num in args:
+        if num > prev:
+            yield num
+        prev = num

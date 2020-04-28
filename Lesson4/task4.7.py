@@ -19,3 +19,16 @@ for i in gen:
         x += 1
     else:
         break
+
+#Второй вариант
+def fibo_gen():
+    prev = 1 #предыдущее число
+    result = 1
+    while True:
+        yield result
+        prev += 1
+        result *= prev
+for idx,itm in enumerate(fibo_gen(), 1):
+    print(itm)
+    if idx == 15:
+        break
